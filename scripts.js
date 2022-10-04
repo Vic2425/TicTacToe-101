@@ -34,7 +34,7 @@ const handleClick = (element) => {
 // // this function places the "currentMarker" inside the HTML element that was clicked and calls the "changeMarker" function.
 const addMarker = (id) => {
 
-  let element = document.getElementById(id) 
+  let element = document.getElementById(id); 
   const row = parseInt(element.id.charAt(0))
   const column = parseInt(element.id.charAt(2))
   board[row][column] = currentMarker
@@ -52,7 +52,7 @@ const addMarker = (id) => {
   // document
   // .innerHTM
   // changeMarker()
- checkForWin()
+  checkForWin()
 }
 
 
@@ -91,6 +91,12 @@ const resetBoard = () => {
 //     // sets the innerHTML to null to replace the "X" or "O"
     squares[i].innerHTML = null;
   }  
+  board = [
+    ['', '', ''],
+    ['', '', ''],
+    ['', '', '']
+  ]
+
 }
 
 // // check For Win 
@@ -125,7 +131,7 @@ const verticalWin = () => {
   || (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
   || (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")  
   || (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")  
-  {console.log("Vertical Win");
+  ){console.log("Vertical Win");
   return true;} 
 }
 
@@ -135,7 +141,7 @@ const diagonalWin = () => {
   || (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X") 
   || (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O") 
   || (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O") 
-  {
+  ){
     console.log("Diagonal Win");
     return true;
   }}
